@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>REACT</title>
+</head>
+<body>
+    <h1>Práctica React</h1>
+    <h2>Texto</h2>
+    <div id="principal">
+        
+    </div>
+    <script type="text/babel">
+        function VerDatos(){
+            return(
+                <div>
+                    <p>Nombre</p>
+                    <input type="text" name="nombre"/>
+                    <br/>
+                    <p>Apellidos</p>
+                    <input type="text" name="apellidos"/>
+                    <br/>
+                    <VerDireccion />
+                </div>
+            )
+        }
+        //Función arrow
+        const iniciales = (n1,n2,a1,a2) => {
+            return `${n1[0]}.${n2[0]}.${a1[0]}.${a2[0]}.`
+        }
+
+        function VerDireccion(){
+            const calle="React N° 27"
+            const apellidos = "Telias Camacho"
+            const booleano = false
+            const numero = 100
+            const array = [1,30,600]
+            return(
+                
+                <>
+                    <br/>
+                    <hr/>
+                    <hr/>
+                    <br/>
+                    <p>Ejemplo Variables:</p>
+                    <p>Texto:</p>
+                    <p>{calle}</p>
+                    <p>{apellidos.toUpperCase()}</p>
+                    <br/>
+                    <p>Manejo de Números:</p>
+                    <p>{numero + 200}</p>
+                    <p>{200-100}</p>
+                    <br/>
+                    <p>Boleanos:</p>
+                    <p>{booleano ? "Es Verdadero":"Es Falso"}</p>
+                    <br/>
+                    <p>Arreglos:</p>
+                    <p>{array}</p>
+                    <p>{array[1]}</p>
+                    <p>{iniciales("christian","david","telias","camacho").toUpperCase()}</p>
+                </>
+            )
+        }
+        
+        const contenedor = ReactDOM.createRoot(document.getElementById("principal"))
+        //Asocio este elemento dentro del contenedor
+        contenedor.render(<VerDatos/>)
+    </script>
+</html>
