@@ -25,19 +25,10 @@
                     <p>Apellidos</p>
                     <input type="text" name="apellidos"/>
                     <br/>
-                    <VerDireccion />
                 </div>
             )
         }
-        function VerDireccion(){
-            return(
-                <>
-                    <p>Calle</p>
-                    <p>Número 27</p>
-                </>
-            )
-        }
-        
+        //Creo un elemento ROOT como contenedor
         const contenedor = ReactDOM.createRoot(document.getElementById("principal"))
         //Asocio este elemento dentro del contenedor
         contenedor.render(<VerDatos/>)

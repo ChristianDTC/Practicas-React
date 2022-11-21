@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>REACT</title>
+</head>
+<body>
+    <h1>Práctica React</h1>
+    <h2>Texto</h2>
+    <div id="principal">
+        
+    </div>
+    <script type="text/babel">
+        class VerDatos extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <p>Nombre</p>
+                        <input type="text" name="nombre"/>
+                        <br/>
+                        <p>Apellidos</p>
+                        <input type="text" name="apellidos"/>
+                        <br/>
+                    </div>
+                )
+            }
+        }
+        //Creo un elemento ROOT como contenedor
+        const contenedor = ReactDOM.createRoot(document.getElementById("principal"))
+        //Asocio este elemento dentro del contenedor
+        contenedor.render(<VerDatos/>)
+    </script>
+</html>
